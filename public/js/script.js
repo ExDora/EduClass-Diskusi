@@ -2,6 +2,16 @@
 const discussions = [
   {
     id: 1,
+    subject: "Inggris",
+    title: 'Apa perbedaan "a" dan "an" dalam Bahasa Inggris?',
+    excerpt: 'Saya kesulitan memahami Kata "A" digunakan sebelum kata yang diawali bunyi konsonan contoh yang saya temui: a book, a car. Sedangkan "an" digunakan sebelum kata yang diawali bunyi vokal (a, i, u, e, o) seperti an apple, an hour. Mohon bantuannya teman-teman, Bapak/Ibu Guru untuk menjelaskan dan memberi pemahaman, Terimakasih.',
+    author: "Neville Owen",
+    time: "4 Hari yang lalu",
+    views: 24,
+    comments: 1,
+  },
+  {
+    id: 2,
     subject: "Mandarin",
     title: "（。。。不。。。）",
     excerpt: "Wǒ shì yī wèi zhèngzài xuéxí hànyǔ de xuésheng. Wǒ láizì yìnní, xiànzài zhù zài yǎjiādá. Wǒ de jiā yǒu sì kǒu rén, bàba, māma, yī gè dìdi hé wǒ. Wǒ fēicháng xǐhuān xuéxí wàiyǔ, yīnwèi wǒ xiǎng yào néng gòu hé láizì bùtóng guójiā de rén jiāoliú.",
@@ -11,7 +21,7 @@ const discussions = [
     comments: 2,
   },
   {
-    id: 2,
+    id: 3,
     subject: "Inggris",
     title: "Exposition Text",
     excerpt: "English is one of the most important languages in the world because it is used as an international means of communication in various fields such as education, business, technology, and tourism. By mastering English, someone can access more information, get better job opportunities, and communicate with people from different countries.",
@@ -21,7 +31,7 @@ const discussions = [
     comments: 2,
   },
   {
-    id: 3,
+    id: 4,
     subject: "Matematika",
     title: "Fungsi Komposisi & Invers",
     excerpt: "Fungsi komposisi adalah penggabungan dua fungsi secara berurutan, dilambangkan (f · g)(x) = f(g(x)). Fungsi invers adalah kebalikan dari fungsi, dilambangkan f⁻¹(x), di mana f(a) = b maka f⁻¹(b) = a. Keduanya saling berkaitan karena (f · f⁻¹)(x) = (f⁻¹ · f)(x) = x.",
@@ -31,7 +41,7 @@ const discussions = [
     comments: 2,
   },
   {
-    id: 4,
+    id: 5,
     subject: "B. Indonesia",
     title: "Karya Tulis Ilmiah",
     excerpt: "Karya tulis ilmiah adalah tulisan yang menyajikan fakta dan data secara sistematis, objektif, dan logis berdasarkan metode ilmiah untuk memecahkan suatu masalah. Tujuannya untuk mengomunikasikan hasil penelitian atau kajian kepada masyarakat ilmiah.",
@@ -41,7 +51,7 @@ const discussions = [
     comments: 2,
   },
   {
-    id: 5,
+    id: 6,
     subject: "Sejarah",
     title: "Proklamasi Kemerdekaan Indonesia",
     excerpt: "Proklamasi Kemerdekaan Indonesia dibacakan oleh Soekarno dan Hatta pada 17 Agustus 1945 di Jakarta. Peristiwa ini merupakan puncak perjuangan bangsa Indonesia melawan penjajahan dan menjadi tonggak lahirnya negara Republik Indonesia yang merdeka dan berdaulat.",

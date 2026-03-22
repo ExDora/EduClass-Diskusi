@@ -9,6 +9,7 @@
     // Register Routes
     $router->add('GET', '/all', 'StudentController', 'index');
     $router->add('GET', '/create', 'StudentController', 'create');
+    $router->add('GET', '/detail', 'StudentController', 'detail');
 
     $router->run();
 
