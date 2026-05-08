@@ -41,15 +41,15 @@
                 <span>＋</span> Buat Topik Baru
             </button>
 
-            <a href="/all" class="nav-item">
+            <a href="/topic" class="nav-item">
                 <span class="nav-icon">🏠</span> Beranda
             </a>
             
-            <a href="#" class="nav-item">
+            <a href="/all" class="nav-item">
                 <span class="nav-icon">💬</span> Semua Diskusi
             </a>
             
-            <a href="#" class="nav-item">
+            <a href="/trending" class="nav-item">
                 <span class="nav-icon">📈</span> Trending
             </a>
             

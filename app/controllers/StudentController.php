@@ -3,21 +3,15 @@
     namespace App\Controllers;
     class StudentController
     {
-        public function index()
+        public function login()
         {
-           require_once '../app/views/students/index.php';
-        }
-
-        public function create()
-        {
-           require_once '../app/views/students/create.php';
-        }
-
-        public function detail()
-        {
-            require_once '../app/views/students/detail.php';
+            require_once '../app/views/students/login.php';
         }
         
+        public function signup()
+        {
+            require_once '../app/views/students/sign-up.php';
+        }
         // public function show(string $id)
         // {
         //    require_once '../app/views/students/show.php';

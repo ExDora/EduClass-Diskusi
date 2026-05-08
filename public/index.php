@@ -2,14 +2,21 @@
 
     require_once '../app/core/Router.php';
     
+    use App\Controllers\StudentController;
+    use App\Controllers\DiscussionController;
     use App\Core\Router;
 
     $router = new Router();
 
     // Register Routes
-    $router->add('GET', '/all', 'StudentController', 'index');
-    $router->add('GET', '/create', 'StudentController', 'create');
-    $router->add('GET', '/detail', 'StudentController', 'detail');
+    $router->add('GET', '/login', 'StudentController', 'login');
+    $router->add('GET', '/register', 'StudentController', 'signup');
+
+    $router->add('GET', '/topics', 'DiscussionController', 'index');
+    $router->add('GET', '/topics/create', 'DiscussionController', 'create');
+    $router->add('GET', '/discussions', 'DiscussionController', 'all');
+    $router->add('GET', '/discussions/{id}', 'DiscussionController', 'detail');
+    $router->add('GET', '/trending', 'DiscussionController', 'trending');
 
     $router->run();
 

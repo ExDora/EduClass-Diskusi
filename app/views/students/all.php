@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduClass – Detail Diskusi</title>
-  <link rel="stylesheet" href="/css/detail.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduClass - Semua Diskusi</title>
+    <link rel="stylesheet" href="/css/all.css">
 </head>
+
 <body>
 
     <!-- NAVBAR START-->
@@ -50,7 +51,7 @@
                 <span class="nav-icon">💬</span> Semua Diskusi
             </a>
             
-            <a href="#" class="nav-item">
+            <a href="/trending" class="nav-item">
                 <span class="nav-icon">📈</span> Trending
             </a>
             
@@ -98,59 +99,20 @@
 
         <!-- BODY START -->
         <main class="main">
-            <a href="/all" class="back-link">← Kembali ke Diskusi</a>
-
-            <!-- Bagian Topic Utama START -->
-            <div class="topic-card">
-                <span class="subject-badge" id="subjectBadge"></span>
-                <h1 class="topic-title" id="topicTitle"></h1>
-                
-                <div class="topic-author-row">
-                    <div class="author-avatar" id="topicAuthorInit"></div>
-                    <div class="author-info">
-                        <span class="author-name" id="topicAuthorName"></span>
-                        <span class="author-meta" id="topicAuthorMeta"></span>
-                    </div>
-                </div>
+            <h1 class="page-title">Semua Diskusi</h1>
+            <p class="page-sub">Jelajahi semua topik diskusi dari berbagai mata pelajaran</p>
             
-                <div class="topic-body" id="topicBody"></div>
-            </div>
-            <!-- Bagian Topic Utama END -->
-
-            <!-- Bagian Balasan START -->
-            <div class="replies-header">
-                <div class="replies-label">
-                    💬 <span id="replyCount">Balasan (0)</span>
-                </div>
-                <button class="btn-kirim" onclick="toggleMainReply()">Kirim Balasan</button>
-            </div>
+            <div class="filter-chips" id="filterChips"></div>
+            <div class="topic-count" id="topicCount">Menampilkan 6 topik diskusi</div>
+            <div class="discussion-list" id="discussionList"></div>
             
-            <!-- Bagian Balasan (Ngetik) START -->
-            <div class="main-reply-box" id="mainReplyBox">
-                <textarea
-                id="mainReplyTextarea"
-                placeholder="Tulis balasan kamu di sini..."
-                style="width:100%;min-height:110px;padding:12px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text-main);resize:vertical;outline:none;transition:border-color .2s,box-shadow .2s;"
-                onfocus="this.style.borderColor='var(--primary)';this.style.boxShadow='0 0 0 3px rgba(79,195,247,.15)'"
-                onblur="this.style.borderColor='var(--border)';this.style.boxShadow='none'"
-                ></textarea>
-                <div class="reply-input-actions">
-                    <button class="btn-cancel-reply" onclick="toggleMainReply()">Batal</button>
-                    <button class="btn-send-reply" onclick="sendMainReply()">Publikasikan</button>
-                </div>
+            <div class="no-results" id="noResults">
+                Tidak ada topik yang sesuai dengan pencarian atau filter.
             </div>
-            <!-- Bagian Balasan (Ngetik) END -->
-
-            <!-- Bagian Balasan END -->
-             
-            <div id="replyList"></div>
-        
         </main>
         <!-- BODY END -->
     </div>
-    
-    <div class="toast" id="toast"></div>
-    
-    <script src="/js/detail.js"></script>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
