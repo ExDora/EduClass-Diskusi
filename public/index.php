@@ -18,6 +18,10 @@
     $router->add('GET', '/discussions/{id}', 'DiscussionController', 'detail');
     $router->add('GET', '/trending', 'DiscussionController', 'trending');
 
+    $router->add('GET', '/classes', 'ClassController', 'kelasSaya');
+    $router->add('GET', '/subjects', 'SubjectController', 'mataPelajaran');
+    $router->add('GET', '/settings', 'SettingController', 'pengaturan');
+
     $router->run();
 
 ?>
