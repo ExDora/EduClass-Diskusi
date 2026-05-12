@@ -9,8 +9,8 @@
     $router = new Router();
 
     // Register Routes
-    $router->add('GET', '/login', 'StudentController', 'login');
-    $router->add('GET', '/register', 'StudentController', 'signup');
+    $router->add('GET', '/login', 'AuthController', 'login');
+    $router->add('GET', '/register', 'AuthController', 'signup');
 
     $router->add('GET', '/topics', 'DiscussionController', 'index');
     $router->add('GET', '/topics/create', 'DiscussionController', 'create');
