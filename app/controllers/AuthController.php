@@ -1,7 +1,7 @@
 <?php
 
     namespace App\Controllers;
-    class StudentController
+    class AuthController
     {
         public function login()
         {
