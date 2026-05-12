@@ -1,0 +1,37 @@
+/* ── TOMBOL HAPUS DI CARD ── */
+.card-actions {
+    margin-left: auto;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    color: #EF5350;
+    transition: background .2s;
+    line-height: 1;
+}
+
+.btn-delete:hover {
+    background: #FFEBEE;
+}
+
+.delete-form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+/* ── PESAN ERROR ── */
+.form-error {
+    background: #FFEBEE;
+    color: #C62828;
+    border: 1px solid #FFCDD2;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}

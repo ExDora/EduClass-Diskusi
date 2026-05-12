@@ -15,7 +15,7 @@
 
         <div class="search-bar">
             <span class="search-icon">🔍</span>
-            <input type="searchInput" type="text" placeholder="Cari topik diskusi...">
+            <input type="text" placeholder="Cari topik diskusi...">
         </div>
 
         <div class="navbar-right">
@@ -44,25 +44,25 @@
             <a href="/topic" class="nav-item">
                 <span class="nav-icon">🏠</span> Beranda
             </a>
-            
+
             <a href="/all" class="nav-item">
                 <span class="nav-icon">💬</span> Semua Diskusi
             </a>
-            
+
             <a href="/trending" class="nav-item">
                 <span class="nav-icon">📈</span> Trending
             </a>
-            
+
             <a href="#" class="nav-item">
                 <span class="nav-icon">📖</span> Mata Pelajaran
             </a>
-            
+
             <a href="#" class="nav-item">
                 <span class="nav-icon">👤</span> Kelas Saya
             </a>
-            
+
             <div class="sidebar-section-label">Kelas Aktif</div>
-            
+
             <div class="kelas-item">
                 <div class="kelas-icon m">M</div>
                 <div>
@@ -70,7 +70,7 @@
                     <div class="kelas-count">15 Topik</div>
                 </div>
             </div>
-      
+
             <div class="kelas-item">
                 <div class="kelas-icon f">F</div>
                 <div>
@@ -78,7 +78,7 @@
                     <div class="kelas-count">6 Topik</div>
                 </div>
             </div>
-            
+
             <div class="kelas-item">
                 <div class="kelas-icon b">B</div>
                 <div>
@@ -86,7 +86,7 @@
                     <div class="kelas-count">8 Topik</div>
                 </div>
             </div>
-            
+
             <div class="sidebar-bottom">
                 <a href="#" class="nav-item">
                     <span class="nav-icon">⚙️</span> Pengaturan
@@ -97,60 +97,69 @@
 
         <!-- BODY START -->
         <main class="main">
-            <a href="index.html" class="back-link">
+            <a href="/discussions" class="back-link">
                 <span class="arrow">‹</span> Kembali ke diskusi
             </a>
-            
+
             <h1 class="page-title">Buat Topik Baru</h1>
             <p class="page-sub">Mulai diskusi baru dan dapatkan tanggapan dari teman dan guru</p>
-            
+
+            <?php if (isset($_GET['error'])): ?>
+                <p class="form-error">Gagal menyimpan topik. Silakan coba lagi.</p>
+            <?php endif; ?>
+
             <div class="form-card">
-                <div class="form-group">
-                    <label class="form-label" for="kategori">Kategori</label>
-                    <select class="form-select" id="kategori">
-                        <option value="" disabled selected>Pilih Kategori</option>
-                        <option value="matematika">Matematika</option>
-                        <option value="inggris">Inggris</option>
-                        <option value="mandarin">Mandarin</option>
-                        <option value="b-indonesia">B. Indonesia</option>
-                        <option value="sejarah">Sejarah</option>
-                        <option value="fisika">Fisika</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="judul">Judul Topik</label>
-                    <input
-                    class="form-input"
-                    type="text"
-                    id="judul"
-                    maxlength="150"
-                    placeholder="Tulis judul yang jelas dan deskriptif"
-                    >
-                    <div class="char-counter" id="judulCounter">0/150 Karakter</div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="isi">Isi Diskusi</label>
-                    <textarea
-                    class="form-textarea"
-                    id="isi"
-                    placeholder="Jelaskan pertanyaan atau topik diskusi kamu secara detail..."
-                    ></textarea>
-                </div>
-                
-                <div class="form-footer">
-                    <button class="btn btn-cancel" id="btnBatal" onclick="window.location.href='index.html'">Batal</button>
-                    <button class="btn btn-publish" id="btnPublish" disabled>Publikasikan Topik</button>
-                </div>
+                <form action="/discussions" method="POST" id="createForm">
+
+                    <div class="form-group">
+                        <label class="form-label" for="mapel_id">Kategori</label>
+                        <select class="form-select" id="mapel_id" name="mapel_id" required>
+                            <option value="" disabled selected>Pilih Kategori</option>
+                            <?php foreach ($mapel as $m): ?>
+                                <option value="<?= $m['id'] ?>">
+                                    <?= htmlspecialchars($m['nama']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="judul">Judul Topik</label>
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="judul"
+                            name="judul"
+                            maxlength="150"
+                            placeholder="Tulis judul yang jelas dan deskriptif"
+                            required
+                        >
+                        <div class="char-counter" id="judulCounter">0/150 Karakter</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="isi">Isi Diskusi</label>
+                        <textarea
+                            class="form-textarea"
+                            id="isi"
+                            name="isi"
+                            placeholder="Jelaskan pertanyaan atau topik diskusi kamu secara detail..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-footer">
+                        <a href="/discussions" class="btn btn-cancel">Batal</a>
+                        <button class="btn btn-publish" type="submit" id="btnPublish" disabled>
+                            Publikasikan Topik
+                        </button>
+                    </div>
+
+                </form>
             </div>
         </main>
         <!-- BODY END -->
     </div>
-    
-    <!-- Nontif START -->
-    <div class="toast" id="toast">✅ Topik berhasil dipublikasikan!</div>
-    <!-- Nontif END -->
 
     <script src="/js/create.js"></script>
 </body>
