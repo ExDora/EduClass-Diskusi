@@ -15,7 +15,7 @@
 
         <div class="search-bar">
             <span class="search-icon">🔍</span>
-            <input type="searchInput" type="text" placeholder="Cari topik diskusi...">
+            <input type="text" id="searchInput" placeholder="Cari topik diskusi...">
         </div>
 
         <div class="navbar-right">
@@ -46,25 +46,25 @@
             <a href="/topic" class="nav-item">
                 <span class="nav-icon">🏠</span> Beranda
             </a>
-            
-            <a href="#" class="nav-item active">
+
+            <a href="/all" class="nav-item active">
                 <span class="nav-icon">💬</span> Semua Diskusi
             </a>
-            
+
             <a href="/trending" class="nav-item">
                 <span class="nav-icon">📈</span> Trending
             </a>
-            
+
             <a href="#" class="nav-item">
                 <span class="nav-icon">📖</span> Mata Pelajaran
             </a>
-            
+
             <a href="#" class="nav-item">
                 <span class="nav-icon">👤</span> Kelas Saya
             </a>
-            
+
             <div class="sidebar-section-label">Kelas Aktif</div>
-            
+
             <div class="kelas-item">
                 <div class="kelas-icon m">M</div>
                 <div>
@@ -72,7 +72,7 @@
                     <div class="kelas-count">15 Topik</div>
                 </div>
             </div>
-      
+
             <div class="kelas-item">
                 <div class="kelas-icon f">F</div>
                 <div>
@@ -80,7 +80,7 @@
                     <div class="kelas-count">6 Topik</div>
                 </div>
             </div>
-            
+
             <div class="kelas-item">
                 <div class="kelas-icon b">B</div>
                 <div>
@@ -88,7 +88,7 @@
                     <div class="kelas-count">8 Topik</div>
                 </div>
             </div>
-            
+
             <div class="sidebar-bottom">
                 <a href="#" class="nav-item">
                     <span class="nav-icon">⚙️</span> Pengaturan
@@ -101,11 +101,26 @@
         <main class="main">
             <h1 class="page-title">Semua Diskusi</h1>
             <p class="page-sub">Jelajahi semua topik diskusi dari berbagai mata pelajaran</p>
-            
+
+            <?php if (isset($_GET['error'])): ?>
+                <p class="form-error">Gagal menghapus topik. Silakan coba lagi.</p>
+            <?php endif; ?>
+
+            <!-- Filter chips diisi JS berdasarkan data dari PHP -->
             <div class="filter-chips" id="filterChips"></div>
-            <div class="topic-count" id="topicCount">Menampilkan 6 topik diskusi</div>
+
+            <div class="topic-count" id="topicCount">
+                Menampilkan <?= count($discussions) ?> topik diskusi
+            </div>
+
+            <!-- Data diskusi dari database di-encode ke JSON untuk dipakai JS -->
+            <div
+                id="discussionData"
+                data-discussions="<?= htmlspecialchars(json_encode($discussions), ENT_QUOTES) ?>"
+            ></div>
+
             <div class="discussion-list" id="discussionList"></div>
-            
+
             <div class="no-results" id="noResults">
                 Tidak ada topik yang sesuai dengan pencarian atau filter.
             </div>
@@ -113,6 +128,6 @@
         <!-- BODY END -->
     </div>
 
-    <script src="/js/script.js"></script>
+    <script src="/js/all.js"></script>
 </body>
 </html>
